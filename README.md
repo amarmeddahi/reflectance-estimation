@@ -9,6 +9,7 @@ The estimation of reflectance is mainly studied by the Phong model. Indeed, the 
 
 ### RTI dataset
 To estimate the reflectance parameters with the Phong model, you will need an RTI dataset. The structure of the file should be as follows:
+
 .
 └── dataset_RTI/
     ├── images/
@@ -22,3 +23,5 @@ To estimate the reflectance parameters with the Phong model, you will need an RT
 ## Acknowledgments
 
  - [Matlab code for robust nonconvex photometric stereo](https://github.com/yqueau/robust_ps)
+
+
