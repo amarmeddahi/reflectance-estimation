@@ -16,7 +16,7 @@ To estimate the reflectance parameters with the Phong model, you will need an RT
 		 - imgXYZ.{JPG;PNG;...}
 	 - lights.txt
 
-Clearly, a specific folder should contain only all the RTI images. Then you can use the `read_rti_data.m` script to extract and format the data. You will have to modify the variavles of the script to adapt it to your dataset. 
+Clearly, a specific folder should contain only all the RTI images. Then you can use the `read_rti_data.m` script to extract and format the data. You will have to modify the variables of the script to adapt it to your dataset. 
 
 ## Acknowledgments
 
