@@ -1,7 +1,7 @@
 # Reflectance estimation using RTI data
 The goal of this repo is to propose a solution to extract information about the BRDF of an object thanks to RTI data.
 
-<p align="center">
+<p align="center"  alt="drawing" width="100">
   <img src="res/rti.gif" />
 </p>
 
