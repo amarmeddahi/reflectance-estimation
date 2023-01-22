@@ -9,7 +9,14 @@ The estimation of reflectance is mainly studied by the Phong model. Indeed, the 
 
 ### RTI dataset
 To estimate the reflectance parameters with the Phong model, you will need an RTI dataset. The structure of the file should be as follows:
-. └── dataset_RTI/ ├── images/ │ ├── img000.{JPG;PNG;...} │ ├── ... │ └── imgXYZ.{JPG;PNG;...} ├── light.txt └── ...
+.
+└── dataset_RTI/
+    ├── images/
+    │   ├── img000.{JPG;PNG;...}
+    │   ├── ...
+    │   └── imgXYZ.{JPG;PNG;...}
+    ├── light.txt
+    └── ...
 
 
 ## Acknowledgments
