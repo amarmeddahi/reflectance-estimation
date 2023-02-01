@@ -1,32 +1,34 @@
 # Reflectance estimation using RTI data
-The goal of this repo is to propose a solution to extract information about the BRDF of an object thanks to RTI data.
+This repository proposes a solution to extract information about the Bidirectional Reflectance Distribution Function (BRDF) of an object using Reflectance Transformation Imaging (RTI) data.
 
 <p align="center">
-  <img src="res/rti.gif" alt="drawing" width="500"/>
+  <img src="assets/rti.gif" alt="drawing" width="500"/>
 </p>
 
-## Description
+## Overview
 
-The estimation of reflectance is mainly studied by the Phong model. Indeed, the traditional approach is to extract a diffuse albedo from the Lambertian model using the data. We propose to estimate the parameters of the Phong model with these same data (i.e., specular albedo and specular coefficients).
+The estimation of reflectance is typically achieved through the Phong model. The traditional approach is to obtain a diffuse albedo from the Lambertian model using the RTI data. This repository aims to estimate the parameters of the Phong model (specular albedo and specular coefficients) using the same RTI data.
+
+Find the slides from an oral presentation [here](https://docs.google.com/presentation/d/1Ubbxut1ImT0FbR_-fpLNLDvqEtQfkjquSulpFTKHjUQ/edit?usp=sharing) (in French).
 
 ## Getting Started
 
 ### RTI dataset
 To estimate the reflectance parameters with the Phong model, you will need an RTI dataset. The structure of the file should be as follows:
- - ./dataset_rti
-	 - images/
-		 - img000.{JPG;PNG;...}
+ - `./dataset_rti/`
+	 - `images/`
+		 - `img000.{JPG;PNG;...}`
 		 - ...
-		 - imgXYZ.{JPG;PNG;...}
-	 - lights.txt
+		 - `imgXYZ.{JPG;PNG;...}`
+	 - `lights.txt`
 
-Clearly, a specific folder should contain only all the RTI images. Then you can use the `read_rti_data.m` script to extract and format the data. You will have to modify the variables of the script to adapt it to your dataset. The txt parser has been developed in the most flexible way possible to adapt to your specific data, but you may have to modify it in some specific cases.
+The RTI images should be stored in a separate folder, and the `read_rti_data.m` script can be used to extract and format the data. The script's variables will need to be modified to match your dataset. The txt parser is designed to be flexible, but modifications may be necessary in some cases.
 
 ### Reflectance estimation with Phong model
-`reflectance_estimation.m` is an implementation of the Phong reflectance model for multiple light sources. It loads data from several .mat files, including images, lights, and a binary mask. It then reshapes and vectorizes the data, computes the specular directions, and initializes a linear system. The script then solves the linear system and computes error metrics for the resulting model images. The script ends by saving the results and reshaped images to .mat files. Please modify the different paths in the script according to yours.
+The  `reflectance_estimation.m` script implements the Phong reflectance model for multiple light sources. It loads data from various .mat files, including images, lights, and a binary mask. The data is then reshaped and vectorized, the specular directions are computed, and a linear system is initialized. The script then solves the linear system, computes error metrics for the resulting model images, and saves the results and reshaped images to .mat files. Please update the script's paths to match your setup.
 
 ### Visualization
-`results_visualization` is used to display and analyze the results of the Phong reflectance model implemented in `reflectance_estimation.m`. It loads and displays the error pixels mask, the mean squared error (MSE) for both the Lambertian and Phong models, and the mean absolute error (MAE) for each light for both models. The script also displays the ground truth, Lambertian and Phong model images, and the MAE for each light as a heatmap. The script allows the user to view the results one light at a time by waiting for a button press before moving to the next image. Please modify the different paths in the script according to yours.
+The `results_visualization.m` script displays and analyzes the results of the Phong reflectance model from `reflectance_estimation.m`. It loads and displays the error pixel mask, mean squared error (MSE) for both the Lambertian and Phong models, and mean absolute error (MAE) for each light for both models. The script also displays the ground truth, Lambertian and Phong model images, and MAE for each light as a heatmap. The script allows you to view the results for each light, one at a time, by pressing a button. Please update the script's paths to match your setup.
 
 ## Acknowledgments
  - [Matlab code for robust nonconvex photometric stereo](https://github.com/yqueau/robust_ps)
