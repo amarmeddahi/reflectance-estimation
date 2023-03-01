@@ -5,6 +5,13 @@ This repository proposes a solution to extract information about the Bidirection
   <img src="assets/rti.gif" alt="drawing" width="500"/>
 </p>
 
+Our approach can lead to visual improvements through a more realistic reflectance. These results can improve the quality of augmented reality applications. The following figure shows an example of results (~20% MSE reduction compared to the well-established Lambertian model on this dataset):
+
+
+<p align="center">
+  <img src="assets/example_results.jpg" alt="drawing"/>
+</p>
+
 ## Overview
 
 The estimation of reflectance is typically achieved through the Phong model. The traditional approach is to obtain a diffuse albedo from the Lambertian model using the RTI data. This repository aims to estimate the parameters of the Phong model (specular albedo and specular coefficients) using the same RTI data.
